@@ -81,6 +81,16 @@ def get_all_grades(student_github):
     print results
     return results
 
+def get_all_student_grades(student_github):
+    QUERY = """SELECT project_title, grade 
+            FROM  Grades
+            WHERE student_github = ?
+    """
+    db_cursor.execute(QUERY, (student_github, ))
+    results = db_cursor.fetchall()
+    print results
+    return results
+
 def get_grade_by_github_title(github, title):
     """Print grade student received for a project."""
     QUERY = """

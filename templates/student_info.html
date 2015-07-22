@@ -7,5 +7,12 @@
 <h1>{{ first }} {{ last }}</h1>
 
 <p>GitHub Account: {{ github }}</p>
+
+<ul>{% for tuple in project_info %}
+     <li>{{ tuple[0] }}: {{ tuple[1] }}</li>
+
+    {% endfor %}
+</ul>
+
 </body>
 </html>
